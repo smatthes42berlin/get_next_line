@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "dumbexample.h": "c",
+        "test_libftft_printf.h": "c",
+        "ft_ft_printf.h": "c",
+        "ft_printf.h": "c",
+        "libft.h": "c",
+        "stat.h": "c"
+    },
+    "cmake.configureOnOpen": false,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#06323A",
+        "titleBar.activeBackground": "#084751",
+        "titleBar.activeForeground": "#F3FCFE"
+    }
+}
