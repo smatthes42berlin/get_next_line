@@ -1,0 +1,2 @@
+:79:test1:PASS
+:39:test2:FAIL: Expected '3 line\n' Was '\n'

@@ -6,7 +6,7 @@
 #    By: smatthes <smatthes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 14:58:39 by smatthes          #+#    #+#              #
-#    Updated: 2023/07/02 20:02:48 by smatthes         ###   ########.fr        #
+#    Updated: 2023/07/20 19:18:19 by smatthes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,11 @@
 # -I Flag adds path where header files are searched during preprocessing
 SHELL:=/bin/bash
 BUFFERSIZE1 =1
+BUFFERSIZE3 =3
 BUFFERSIZE9999 =9999
 BUFFERSIZE10MILL =10000000
-CFLAGS = -Wall -Wextra -Werror -I$(PATHHEADER) -I$(PATHUNITY)
+BUFFERSIZE = 1
+CFLAGS = -Wall -Wextra -Werror -I$(PATHSRC) -I$(PATHHEADER) -I$(PATHUNITY)
 
 PATHUNITY = ./unity/src/
 PATHSRC = ./src/
@@ -41,7 +43,8 @@ SRCTEST = 	test_empty_file.c \
 			test_multiple_newline.c \
 			test_newline_at_eof.c \
 			test_no_newline_at_eof.c \
-			test_normal_file.c
+			test_normal_file.c \
+			test_open_multiple_times.c
 # test_very_long_line.c
 
 OBJFNAME = $(SRC:.c=.o)
@@ -85,7 +88,7 @@ $(PATHTESTEXE)%.out : $(PATHOBJ)%.o $(OBJ) $(PATHOBJ)unity.o
 	$(CC) -o $@ $^
 
 $(PATHOBJ)%.o: %.c
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -c $< -o $@
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFERSIZE) -c $< -o $@
 
 clean:
 	$(RM) $(OBJTEST)
