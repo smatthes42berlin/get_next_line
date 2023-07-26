@@ -6,19 +6,19 @@
 /*   By: smatthes <smatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 19:27:57 by smatthes          #+#    #+#             */
-/*   Updated: 2023/07/21 11:11:36 by smatthes         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:06:31 by smatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./get_next_line.c"
-#include "./get_next_line_utils.c"
+#include "get_next_line.c"
+#include "get_next_line_utils.c"
 #include "test_get_next_line.h"
 
 int	open_read_number_close(char *file_path, int n, char *message)
 {
 	char	*next_line;
-	int fd;
-	int i;
+	int		fd;
+	int		i;
 
 	printf(RED);
 	printf("%s\n", message);
@@ -47,6 +47,7 @@ int	open_read_number_close(char *file_path, int n, char *message)
 int	main(void)
 {
 	char	*file_name;
+
 	file_name = "../srctest/test_files/manual_test_file.txt";
 	open_read_number_close(file_name, 10, "first call");
 	return (0);
