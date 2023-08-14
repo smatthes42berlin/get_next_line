@@ -6,7 +6,7 @@
 /*   By: smatthes <smatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:40:06 by smatthes          #+#    #+#             */
-/*   Updated: 2023/07/26 15:19:45 by smatthes         ###   ########.fr       */
+/*   Updated: 2023/08/04 13:49:27 by smatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*get_next_line(int fd)
 {
 	char				*next_line;
-	BOOLEAN				newline_found;
+	int					newline_found;
 	static t_get_next	gnl_info = {.i_last_newline = BUFFER_PARSED,
 		.total_chars_read = 0};
 
 	next_line = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) == -1)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (reset_gnl_static_null(&gnl_info, &next_line));
 	newline_found = check_if_newline_in_buffer(&gnl_info, &next_line);
 	while (!newline_found && newline_found != ERROR)
@@ -41,7 +41,7 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-BOOLEAN	check_if_newline_in_buffer(t_get_next *gnl_info, char **next_line)
+int	check_if_newline_in_buffer(t_get_next *gnl_info, char **next_line)
 {
 	t_search_state	search;
 

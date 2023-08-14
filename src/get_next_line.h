@@ -6,7 +6,7 @@
 /*   By: smatthes <smatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:40:10 by smatthes          #+#    #+#             */
-/*   Updated: 2023/07/26 15:18:36 by smatthes         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:12:05 by smatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# define BOOLEAN int
 # define TRUE 1
 # define FALSE 0
 # define ERROR -1
@@ -42,7 +41,7 @@ typedef struct s_search_state
 }			t_search_state;
 
 char		*get_next_line(int fd);
-BOOLEAN		check_if_newline_in_buffer(t_get_next *gnl_info, char **next_line);
+int			check_if_newline_in_buffer(t_get_next *gnl_info, char **next_line);
 int			process_newline_search_result(t_get_next *gnl_info,
 				char **next_line,
 				t_search_state search);
