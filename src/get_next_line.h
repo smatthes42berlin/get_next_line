@@ -6,7 +6,7 @@
 /*   By: smatthes <smatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:40:10 by smatthes          #+#    #+#             */
-/*   Updated: 2023/07/27 13:12:05 by smatthes         ###   ########.fr       */
+/*   Updated: 2023/08/18 10:25:33 by smatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 typedef struct s_get_next
 {
-	int		total_chars_read;
+	int		tot_c_read;
 	int		i_last_newline;
 	char	last_buffer_read[BUFFER_SIZE + 1];
 }			t_get_next;
